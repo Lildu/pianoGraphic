@@ -22,14 +22,8 @@ class Tableau1 extends Phaser.Scene{
         this.piano.add(touch);*/
 
         /**let touch=this.add.tileSprite(0,340, 1920,200,'key-1').setOrigin(0,0);
-        this.piano.add(touch);
-        let vt= Math.random(1,28);
-        let vX= Math.random(1,1920);
-        let vY= Math.random(1,1050);*/
+        this.piano.add(touch);*/
         this.star=this.add.container(0,0);
-
-        let star1=this.add.image(0,0, 'star-1').setOrigin(0,0);
-        this.star.add(star1);
 
 
 
@@ -47,9 +41,6 @@ class Tableau1 extends Phaser.Scene{
             {
 
                 case Phaser.Input.Keyboard.KeyCodes.Q:
-
-                    break;
-
                 case Phaser.Input.Keyboard.KeyCodes.S:
                 case Phaser.Input.Keyboard.KeyCodes.D:
                 case Phaser.Input.Keyboard.KeyCodes.F:
