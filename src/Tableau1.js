@@ -34,8 +34,8 @@ class Tableau1 extends Phaser.Scene{
 
 
         this.initKeyboard();
-        this.cameras.main.setBounds(50, 50, 1920, 1050);
-        this.star.scrollFactorX=0;
+        this.cameras.main.setBounds(0, 0, 1920, 1050);
+
 
     }
 
