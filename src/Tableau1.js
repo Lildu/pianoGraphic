@@ -2,6 +2,7 @@
 class Tableau1 extends Phaser.Scene{
 
     preload(){
+<<<<<<< HEAD
         for(let t=0;t<=28;t++){
         this.load.image('star-'+t, 'assets/etoiles/star-'+t+'.png');
         this.load.image('key-'+t, 'assets/piano/key-'+t+'.png');
@@ -78,11 +79,20 @@ class Tableau1 extends Phaser.Scene{
                 case Phaser.Input.Keyboard.KeyCodes.T:
                 case Phaser.Input.Keyboard.KeyCodes.Y:
                     break;
+=======
 
 
-            }
-        });
-    }
+        }
+
+
+
+
+>>>>>>> parent of ac24bdc (maj1)
+
+    create(){
+        this.initKeyboard();
+        this.cameras.main.setBounds(0, 0, 2000, 540);
+}
 
 
     update(){
