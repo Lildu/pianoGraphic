@@ -6,7 +6,13 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('star-'+t, 'assets/etoiles/star-'+t+'.png');
         }
     }
-
+    getFrames(prefix,length){
+        let frames=[];
+        for (let i=1;i<=length;i++){
+            frames.push({key: prefix+i});
+        }
+        return frames;
+    }
 
     create(){
 
