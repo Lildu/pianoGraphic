@@ -2,7 +2,7 @@
 class Tableau1 extends Phaser.Scene{
 
     preload(){
-        for(let t=0;t<=23;t++){
+        for(let t=1;t<=23;t++){
         this.load.image('star-'+t, 'assets/etoiles/star-'+t+'.png');
         }
     }
