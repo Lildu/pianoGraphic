@@ -1,11 +1,13 @@
 
 class Tableau1 extends Phaser.Scene{
 
+
     preload(){
         for(let t=0;t<=28;t++){
         this.load.image('star-'+t, 'assets/etoiles/star-'+t+'.png');
         this.load.image('key-'+t, 'assets/piano/key-'+t+'.png');
         }
+
     }
 
 
@@ -34,8 +36,8 @@ class Tableau1 extends Phaser.Scene{
 */
 
         this.initKeyboard();
-        this.cameras.main.setBounds(0, 0, 1920, 1050);
-
+        this.cameras.main.setBounds(0, 0, 1920, 1080);
+        this.objects.camera.setBackgroundColor('rgb(0,0,0,)');
 
     }
     initKeyboard(){
@@ -70,3 +72,13 @@ class Tableau1 extends Phaser.Scene{
 
     }
 }
+
+const config = {
+    type: Phaser.WEBGL,
+    parent: 'phaser-example',
+    scene: [ Example ],
+    width: 1920,
+    height: 1080
+};
+
+const game = new Phaser.Game(config);
