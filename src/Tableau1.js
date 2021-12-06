@@ -64,20 +64,14 @@ class Tableau1 extends Phaser.Scene{
         {
             switch (kevent.keyCode)
             {
-                case Phaser.Input.Keyboard.KeyCodes.RIGHT:
-                case Phaser.Input.Keyboard.KeyCodes.LEFT:
-                    this.speed=0;
-                    break;
+
+
             }
         });
     }
 
 
     update(){
-        //déplacement de la caméra
-        this.cameras.main.scrollX+=this.speed; // on aurait pu écrire : this.cameras.main.scrollX= this.cameras.main.scrollX + this.speed;
 
-        //petit effet de vibrance sur le filtre film au tout premier plan
-        this.filterFilm.setAlpha(Phaser.Math.Between(95,100)/100)
     }
 }
