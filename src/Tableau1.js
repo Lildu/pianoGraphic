@@ -20,7 +20,7 @@ class Tableau1 extends Phaser.Scene{
 
         //this.st = this.add.container(0,0);
         this.star1=this.add.image(0,0,'star-1').setOrigin(0,0);
-        this.star1.setVisible(false)
+        this.star1.setVisible(true)
         this.star1.setRandomPosition(10,10)
         this.star1.scale=0.1;
         //this.st.add('star1');
@@ -58,7 +58,7 @@ class Tableau1 extends Phaser.Scene{
             switch (kevent.keyCode)
             {
                 case Phaser.Input.Keyboard.KeyCodes.Q:
-                    me.star1.setVisible(true)
+                    me.star1.setVisible(false)
                     console.log('japuis')
                     break
                 case Phaser.Input.Keyboard.KeyCodes.S:
