@@ -36,7 +36,7 @@ class Tableau1 extends Phaser.Scene{
 
         this.initKeyboard();
         this.cameras.main.setBounds(0, 0, 1920, 1080);
-        this.objects.camera.setBackgroundColor('rgb(0,0,0,)');
+        this.objects.camera.setBackgroundColor('rgb(122,119,119)');
 
     }
     initKeyboard(){
