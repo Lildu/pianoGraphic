@@ -99,8 +99,83 @@ class Tableau1 extends Phaser.Scene{
                     obj += 1;
                     console.log(obj)
                     break
-
                 case Phaser.Input.Keyboard.KeyCodes.S:
+
+                    if (obj>=1){
+                        me.star1.setVisible(true)
+                    }
+                    if (obj>=2){
+                        me.star2.setVisible(true)
+                    }
+                    if (obj>=3){
+                        me.star3.setVisible(true)
+                    }
+                    if (obj>=4){
+                        me.star4.setVisible(true)
+                    }
+                    if (obj>=5){
+                        me.star5.setVisible(true)
+                    }
+                    if (obj>=6){
+                        me.star6.setVisible(true)
+                    }
+                    if (obj>=7){
+                        me.star7.setVisible(true)
+                    }
+                    if (obj>=8){
+                        me.star8.setVisible(true)
+                    }
+                    if (obj>=9){
+                        me.star9.setVisible(true)
+                    }
+                    if (obj>=10){
+                        me.star10.setVisible(true)
+                    }
+                    if (obj>=11){
+                        me.star11.setVisible(true)
+                    }
+                    if (obj>=12){
+                        me.star12.setVisible(true)
+                    }
+                    if (obj>=13){
+                        me.star13.setVisible(true)
+                    }
+                    if (obj>=14){
+                        me.star14.setVisible(true)
+                    }
+                    if (obj>=15){
+                        me.star15.setVisible(true)
+                    }
+                    if (obj>=16){
+                        me.star16.setVisible(true)
+                    }
+                    if (obj>=17){
+                        me.star17.setVisible(true)
+                    }
+                    if (obj>=18){
+                        me.star18.setVisible(true)
+                    }
+                    if (obj>=19){
+                        me.star19.setVisible(true)
+                    }
+                    if (obj>=20){
+                        me.star20.setVisible(true)
+                    }
+                    if (obj>=21){
+                        me.star21.setVisible(true)
+                    }
+                    if (obj>=22){
+                        me.star22.setVisible(true)
+                    }
+                    if (obj>=23){
+                        me.star23.setVisible(true)
+                    }
+
+                    obj += 1;
+                    console.log(obj)
+                    break
+
+                case Phaser.Input.Keyboard.KeyCodes.D:
 
                     break;
             }
