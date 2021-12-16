@@ -1,6 +1,8 @@
-var obj =1 ;
-var planet=1;
+let obj = 1;
+let planet=1;
+let cloud=1;
 class Tableau1 extends Phaser.Scene{
+    star;
 
     preload(){
 
@@ -9,6 +11,9 @@ class Tableau1 extends Phaser.Scene{
         }
         for(let t=1;t<=9;t++){
         this.load.image('planet-'+t, 'assets/planet/planet'+t+'.png');
+        }
+        for(let t=1;t<=8;t++){
+            this.load.image('cloud-'+t, 'assets/cloud/cloud'+t+'.png');
         }
     }
     getFrames(prefix,length){
@@ -29,7 +34,10 @@ class Tableau1 extends Phaser.Scene{
             switch (kevent.keyCode)
             {
                 case Phaser.Input.Keyboard.KeyCodes.Q:
-
+                    /*for(let t=1;t<=91;t++){
+                        var star=this.star+t;
+                        me.star.setVisible(true)
+                    }**/
                     if (obj>=1){
                         me.star1.setVisible(true)
                     }
@@ -1159,285 +1167,33 @@ class Tableau1 extends Phaser.Scene{
                     break
                 case Phaser.Input.Keyboard.KeyCodes.G:
 
-                    if (obj>=1){
-                        me.star1.setVisible(true)
+                    if (cloud>=1){
+                        me.cloud1.setVisible(true)
                     }
-                    if (obj>=2){
-                        me.star2.setVisible(true)
+                    if (cloud>=2){
+                        me.cloud2.setVisible(true)
                     }
-                    if (obj>=3){
-                        me.star3.setVisible(true)
+                    if (cloud>=3){
+                        me.cloud3.setVisible(true)
                     }
-                    if (obj>=4){
-                        me.star4.setVisible(true)
+                    if (cloud>=4){
+                        me.cloud4.setVisible(true)
                     }
-                    if (obj>=5){
-                        me.star5.setVisible(true)
+                    if (cloud>=5){
+                        me.cloud5.setVisible(true)
                     }
-                    if (obj>=6){
-                        me.star6.setVisible(true)
+                    if (cloud>=6){
+                        me.cloud6.setVisible(true)
                     }
-                    if (obj>=7){
-                        me.star7.setVisible(true)
+                    if (cloud>=7){
+                        me.cloud7.setVisible(true)
                     }
-                    if (obj>=8){
-                        me.star8.setVisible(true)
-                    }
-                    if (obj>=9){
-                        me.star9.setVisible(true)
-                    }
-                    if (obj>=10){
-                        me.star10.setVisible(true)
-                    }
-                    if (obj>=11){
-                        me.star11.setVisible(true)
-                    }
-                    if (obj>=12){
-                        me.star12.setVisible(true)
-                    }
-                    if (obj>=13){
-                        me.star13.setVisible(true)
-                    }
-                    if (obj>=14){
-                        me.star14.setVisible(true)
-                    }
-                    if (obj>=15){
-                        me.star15.setVisible(true)
-                    }
-                    if (obj>=16){
-                        me.star16.setVisible(true)
-                    }
-                    if (obj>=17){
-                        me.star17.setVisible(true)
-                    }
-                    if (obj>=18){
-                        me.star18.setVisible(true)
-                    }
-                    if (obj>=19){
-                        me.star19.setVisible(true)
-                    }
-                    if (obj>=20){
-                        me.star20.setVisible(true)
-                    }
-                    if (obj>=21){
-                        me.star21.setVisible(true)
-                    }
-                    if (obj>=22){
-                        me.star22.setVisible(true)
-                    }
-                    if (obj>=23){
-                        me.star23.setVisible(true)
-                    }
-                    if (obj>=24){
-                        me.star24.setVisible(true)
-                    }
-                    if (obj>=25){
-                        me.star25.setVisible(true)
-                    }
-                    if (obj>=26){
-                        me.star26.setVisible(true)
-                    }
-                    if (obj>=27){
-                        me.star27.setVisible(true)
-                    }
-                    if (obj>=28){
-                        me.star28.setVisible(true)
-                    }
-                    if (obj>=29){
-                        me.star29.setVisible(true)
-                    }
-                    if (obj>=30){
-                        me.star30.setVisible(true)
-                    }
-                    if (obj>=31){
-                        me.star31.setVisible(true)
-                    }
-                    if (obj>=32){
-                        me.star32.setVisible(true)
-                    }
-                    if (obj>=33){
-                        me.star33.setVisible(true)
-                    }
-                    if (obj>=34){
-                        me.star34.setVisible(true)
-                    }
-                    if (obj>=35){
-                        me.star35.setVisible(true)
-                    }
-                    if (obj>=36){
-                        me.star36.setVisible(true)
-                    }
-                    if (obj>=37){
-                        me.star37.setVisible(true)
-                    }
-                    if (obj>=38){
-                        me.star38.setVisible(true)
-                    }
-                    if (obj>=39){
-                        me.star39.setVisible(true)
-                    }
-                    if (obj>=40){
-                        me.star40.setVisible(true)
-                    }
-                    if (obj>=41){
-                        me.star41.setVisible(true)
-                    }
-                    if (obj>=42){
-                        me.star42.setVisible(true)
-                    }
-                    if (obj>=43){
-                        me.star43.setVisible(true)
-                    }
-                    if (obj>=44){
-                        me.star44.setVisible(true)
-                    }
-                    if (obj>=45){
-                        me.star45.setVisible(true)
-                    }
-                    if (obj>=46){
-                        me.star46.setVisible(true)
-                    }
-                    if (obj>=47){
-                        me.star47.setVisible(true)
-                    }
-                    if (obj>=48){
-                        me.star48.setVisible(true)
-                    }
-                    if (obj>=49){
-                        me.star49.setVisible(true)
-                    }
-                    if (obj>=50){
-                        me.star50.setVisible(true)
-                    }
-                    if (obj>=51){
-                        me.star51.setVisible(true)
-                    }
-                    if (obj>=52){
-                        me.star52.setVisible(true)
-                    }
-                    if (obj>=53){
-                        me.star53.setVisible(true)
-                    }
-                    if (obj>=54){
-                        me.star54.setVisible(true)
-                    }
-                    if (obj>=55){
-                        me.star55.setVisible(true)
-                    }
-                    if (obj>=56){
-                        me.star56.setVisible(true)
-                    }
-                    if (obj>=57){
-                        me.star57.setVisible(true)
-                    }
-                    if (obj>=58){
-                        me.star58.setVisible(true)
-                    }
-                    if (obj>=59){
-                        me.star59.setVisible(true)
-                    }
-                    if (obj>=60){
-                        me.star60.setVisible(true)
-                    }
-                    if (obj>=61){
-                        me.star61.setVisible(true)
-                    }
-                    if (obj>=62){
-                        me.star62.setVisible(true)
-                    }
-                    if (obj>=63){
-                        me.star63.setVisible(true)
-                    }
-                    if (obj>=64){
-                        me.star64.setVisible(true)
-                    }
-                    if (obj>=65){
-                        me.star65.setVisible(true)
-                    }
-                    if (obj>=66){
-                        me.star66.setVisible(true)
-                    }
-                    if (obj>=67){
-                        me.star67.setVisible(true)
-                    }
-                    if (obj>=68){
-                        me.star68.setVisible(true)
-                    }
-                    if (obj>=69){
-                        me.star69.setVisible(true)
-                    }
-                    if (obj>=70){
-                        me.star70.setVisible(true)
-                    }
-                    if (obj>=71){
-                        me.star71.setVisible(true)
-                    }
-                    if (obj>=72){
-                        me.star72.setVisible(true)
-                    }
-                    if (obj>=73){
-                        me.star73.setVisible(true)
-                    }
-                    if (obj>=74){
-                        me.star74.setVisible(true)
-                    }
-                    if (obj>=75){
-                        me.star75.setVisible(true)
-                    }
-                    if (obj>=76){
-                        me.star76.setVisible(true)
-                    }
-                    if (obj>=76){
-                        me.star76.setVisible(true)
-                    }
-                    if (obj>=77){
-                        me.star77.setVisible(true)
-                    }
-                    if (obj>=78){
-                        me.star78.setVisible(true)
-                    }
-                    if (obj>=79){
-                        me.star79.setVisible(true)
-                    }
-                    if (obj>=80){
-                        me.star80.setVisible(true)
-                    }
-                    if (obj>=81){
-                        me.star81.setVisible(true)
-                    }
-                    if (obj>=82){
-                        me.star82.setVisible(true)
-                    }
-                    if (obj>=83){
-                        me.star83.setVisible(true)
-                    }
-                    if (obj>=84){
-                        me.star84.setVisible(true)
-                    }
-                    if (obj>=85){
-                        me.star85.setVisible(true)
-                    }
-                    if (obj>=86){
-                        me.star86.setVisible(true)
-                    }
-                    if (obj>=87){
-                        me.star87.setVisible(true)
-                    }
-                    if (obj>=88){
-                        me.star88.setVisible(true)
-                    }
-                    if (obj>=89){
-                        me.star89.setVisible(true)
-                    }
-                    if (obj>=90){
-                        me.star90.setVisible(true)
-                    }
-                    if (obj>=91){
-                        me.star91.setVisible(true)
+                    if (cloud>=8){
+                        me.cloud8.setVisible(true)
                     }
 
-                    obj += 1;
-                    console.log(obj)
+                    cloud += 1;
+                    console.log(cloud)
                     break
 
                 case Phaser.Input.Keyboard.KeyCodes.H:
@@ -1879,6 +1635,54 @@ class Tableau1 extends Phaser.Scene{
 
         //this.st = this.add.container(0,0);
 
+        /**   créattion cloud   */
+
+        this.cloud1=this.add.image(0,-150,'cloud-1').setOrigin(0,0);
+        this.cloud1.setVisible(false)
+        /**this.cloud1.setRandomPosition(0,2)*/
+        this.cloud1.scale=1;
+        this.cloud1.angle=80+Math.random()*-50;
+
+
+        this.cloud2=this.add.image(900,400,'cloud-2').setOrigin(0,0);
+        this.cloud2.setVisible(false)
+        this.cloud2.scale=2;
+        this.cloud2.angle=(Math.random()*30)+20;
+      /*  this.cloud2.flipX;*/
+
+        this.cloud3=this.add.image(800, 150,'cloud-3').setOrigin(0,0);
+        this.cloud3.setVisible(false)
+        this.cloud3.scale=1.5;
+        this.cloud3.angle=-60+Math.random()*-40;
+
+
+        this.cloud4=this.add.image(-150,650,'cloud-4').setOrigin(0,0);
+        this.cloud4.setVisible(false)
+        this.cloud4.scale=1;
+        this.cloud4.angle=-20+Math.random()*-30;
+
+        this.cloud5=this.add.image(800-Math.random()*200,-200,'cloud-5').setOrigin(0,0);
+        this.cloud5.setVisible(false)
+        this.cloud5.scale=1+Math.random()*0.5;
+        this.cloud5.flipX= true;
+        this.cloud5.angle=90-Math.random()*10;
+
+
+        this.cloud6=this.add.image(400+Math.random()*200,600,'cloud-6').setOrigin(0,0);
+        this.cloud6.setVisible(false)
+        this.cloud6.scale=1.5;
+        this.cloud6.angle=90+Math.random()*20;
+
+        this.cloud7=this.add.image(900,150+Math.random()*100,'cloud-7').setOrigin(0,0);
+        this.cloud7.setVisible(false)
+        this.cloud7.scale=1;
+        this.cloud7.angle=Math.random()*-20;
+
+        this.cloud8=this.add.image(-150,-200+Math.random()*500,'cloud-8').setOrigin(0,0);
+        this.cloud8.setVisible(true)
+        this.cloud8.flipY= true;
+        this.cloud8.scale=1;
+        this.cloud8.angle=Math.random()*5;
 
 
 
@@ -2347,14 +2151,21 @@ class Tableau1 extends Phaser.Scene{
 
 
         /**création planet*/
+        let n = 0;
+        while (n<360) {
+            n++;
+        }
+
         this.planet1=this.add.image(0,0,'planet-1').setOrigin(0,0);
         this.planet1.setVisible(false)
         this.planet1.setRandomPosition(1,2)
-        this.planet1.scale=Math.random(20,200);
+        this.planet1.scale=Math.random()*2;
+      
+
         this.tweens.add({
             targets: this.planet1,
             x: '-=500',
-            y: '+=50',
+            y: Math.random()*2,
             duration: 100000,
             ease: 'cricle',
             yoyo: true,
@@ -2365,12 +2176,12 @@ class Tableau1 extends Phaser.Scene{
         this.planet2=this.add.image(0,0,'planet-2').setOrigin(0,0);
         this.planet2.setVisible(false)
         this.planet2.setRandomPosition(1,2)
-        this.planet2.scale=Math.random(20,200);
+        this.planet2.scale=Math.random()*2;
         this.planet2.flipX=true;
         this.tweens.add({
             targets: this.planet2,
             x: '+=1000',
-            y: '+=50',
+            y: Math.random()*2,
             duration: 100000,
             ease: 'circle',
             yoyo: true,
@@ -2382,11 +2193,11 @@ class Tableau1 extends Phaser.Scene{
         this.planet3=this.add.image(0,0,'planet-3').setOrigin(0,0);
         this.planet3.setVisible(false)
         this.planet3.setRandomPosition(1,2)
-        this.planet3.scale=Math.random(20,200);
+        this.planet3.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet3,
             x: '-=400',
-            y: '+=50',
+            y: Math.random()*2,
             duration: 100000,
             ease: 'circle',
             yoyo: true,
@@ -2398,11 +2209,12 @@ class Tableau1 extends Phaser.Scene{
         this.planet4=this.add.image(0,0,'planet-4').setOrigin(0,0);
         this.planet4.setVisible(false)
         this.planet4.setRandomPosition(1,2)
-        this.planet4.scale=Math.random(20,200);
+        this.planet4.scale=Math.random()*2;
         this.planet4.flipX=true;
         this.tweens.add({
             targets: this.planet4,
             x: '+=700',
+            y: -(Math.random()*2),
             duration: 100000,
             ease: 'linear',
             yoyo: true,
@@ -2415,10 +2227,11 @@ class Tableau1 extends Phaser.Scene{
         this.planet5=this.add.image(0,0,'planet-5').setOrigin(0,0);
         this.planet5.setVisible(false)
         this.planet5.setRandomPosition(1,2)
-        this.planet5.scale=Math.random(20,200);
+        this.planet5.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet5,
             x: '-=800',
+            y: -(Math.random()*2),
             duration: 100000,
             ease: 'linear',
             yoyo: true,
@@ -2431,10 +2244,11 @@ class Tableau1 extends Phaser.Scene{
         this.planet6=this.add.image(0,0,'planet-6').setOrigin(0,0);
         this.planet6.setVisible(false)
         this.planet6.setRandomPosition(1,2)
-        this.planet6.scale=Math.random(20,200);
+        this.planet6.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet6,
             x: '-=500',
+            y: -(Math.random()*2),
             duration: 100000,
             ease: 'linear',
             yoyo: true,
@@ -2447,10 +2261,11 @@ class Tableau1 extends Phaser.Scene{
         this.planet7=this.add.image(0,0,'planet-7').setOrigin(0,0);
         this.planet7.setVisible(false)
         this.planet7.setRandomPosition(1,2)
-        this.planet7.scale=Math.random(20,200);
+        this.planet7.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet7,
             x: '+=200',
+            y: -(Math.random()*2),
             duration: 100000,
             ease: 'linear',
             yoyo: true,
@@ -2463,10 +2278,11 @@ class Tableau1 extends Phaser.Scene{
         this.planet8=this.add.image(0,0,'planet-8').setOrigin(0,0);
         this.planet8.setVisible(false)
         this.planet8.setRandomPosition(1,2)
-        this.planet8.scale=Math.random(20,200);
+        this.planet8.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet8,
             x: '-=500',
+            y: (Math.random()*20),
             duration: 100000,
             ease: 'linear',
             yoyo: true,
@@ -2479,10 +2295,11 @@ class Tableau1 extends Phaser.Scene{
         this.planet9=this.add.image(0,0,'planet-9').setOrigin(0,0);
         this.planet9.setVisible(false)
         this.planet9.setRandomPosition(1,2)
-        this.planet9.scale=Math.random(20,200);
+        this.planet9.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet9,
             x: '-=500',
+            y: -(Math.random()*20),
             duration: 100000,
             ease: 'linear',
             yoyo: true,
