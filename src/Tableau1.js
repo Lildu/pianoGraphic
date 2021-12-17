@@ -1,7 +1,6 @@
 let obj = 1;
 let planet=1;
 let cloud=1;
-
 class Tableau1 extends Phaser.Scene{
     star;
 
@@ -15,9 +14,6 @@ class Tableau1 extends Phaser.Scene{
         }
         for(let t=1;t<=8;t++){
             this.load.image('cloud-'+t, 'assets/cloud/cloud'+t+'.png');
-        }
-        for(let t=1;t<=8;t++){
-            this.load.sound('note-'+t, 'assets/sound/note'+t+'.mp3');
         }
     }
     getFrames(prefix,length){
@@ -42,8 +38,6 @@ class Tableau1 extends Phaser.Scene{
                         var star=this.star+t;
                         me.star.setVisible(true)
                     }**/
-                    me.do.play();
-
                     if (obj>=1){
                         me.star1.setVisible(true)
                     }
@@ -1640,9 +1634,6 @@ class Tableau1 extends Phaser.Scene{
          var ransize = (add.Math.random(0,100)/100);*/
 
         //this.st = this.add.container(0,0);
-        /**   créattion music   */
-        this.do=this.sound.add('note-1',{loop: false});
-        this.do.volume=0.6;
 
         /**   créattion cloud   */
 
