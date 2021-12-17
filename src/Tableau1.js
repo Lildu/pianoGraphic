@@ -1,6 +1,10 @@
 let obj = 1;
 let planet=1;
 let cloud=1;
+function playdo(){
+    var audio = new Audio('note-1')
+    audio.play();
+}
 class Tableau1 extends Phaser.Scene{
     star;
 
@@ -14,6 +18,9 @@ class Tableau1 extends Phaser.Scene{
         }
         for(let t=1;t<=8;t++){
             this.load.image('cloud-'+t, 'assets/cloud/cloud'+t+'.png');
+        }
+        for(let t=1;t<=8;t++){
+            this.load.sound('note-'+t, 'assets/sound/note'+t+'.wav');
         }
     }
     getFrames(prefix,length){
@@ -38,6 +45,7 @@ class Tableau1 extends Phaser.Scene{
                         var star=this.star+t;
                         me.star.setVisible(true)
                     }**/
+                    playdo()
                     if (obj>=1){
                         me.star1.setVisible(true)
                     }
@@ -1641,6 +1649,7 @@ class Tableau1 extends Phaser.Scene{
         this.cloud1.setVisible(false)
         /**this.cloud1.setRandomPosition(0,2)*/
         this.cloud1.scale=1;
+        this.cloud1.opacity = 0.5;
         this.cloud1.angle=80+Math.random()*-50;
 
 
@@ -1679,7 +1688,7 @@ class Tableau1 extends Phaser.Scene{
         this.cloud7.angle=Math.random()*-20;
 
         this.cloud8=this.add.image(-150,-200+Math.random()*500,'cloud-8').setOrigin(0,0);
-        this.cloud8.setVisible(true)
+        this.cloud8.setVisible(false)
         this.cloud8.flipY= true;
         this.cloud8.scale=1;
         this.cloud8.angle=Math.random()*5;
@@ -2164,8 +2173,8 @@ class Tableau1 extends Phaser.Scene{
 
         this.tweens.add({
             targets: this.planet1,
-            x: '-=500',
-            y: Math.random()*2,
+            x: Math.random()*1000,
+            y: Math.random()*1000,
             duration: 100000,
             ease: 'cricle',
             yoyo: true,
@@ -2180,9 +2189,9 @@ class Tableau1 extends Phaser.Scene{
         this.planet2.flipX=true;
         this.tweens.add({
             targets: this.planet2,
-            x: '+=1000',
-            y: Math.random()*2,
-            duration: 100000,
+            x: Math.random()*1000,
+            y: Math.random()*1000,
+            duration: 100000+Math.random()*10000,
             ease: 'circle',
             yoyo: true,
             repeat: -1,
@@ -2196,9 +2205,9 @@ class Tableau1 extends Phaser.Scene{
         this.planet3.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet3,
-            x: '-=400',
-            y: Math.random()*2,
-            duration: 100000,
+            x: Math.random()*1000,
+            y: Math.random()*1000,
+            duration: 100000+Math.random()*10000,
             ease: 'circle',
             yoyo: true,
             repeat: -1,
@@ -2213,9 +2222,9 @@ class Tableau1 extends Phaser.Scene{
         this.planet4.flipX=true;
         this.tweens.add({
             targets: this.planet4,
-            x: '+=700',
-            y: -(Math.random()*2),
-            duration: 100000,
+            x: Math.random()*1000,
+            y: Math.random()*1000,
+            duration: 100000+Math.random()*10000,
             ease: 'linear',
             yoyo: true,
             repeat: -1,
@@ -2225,14 +2234,14 @@ class Tableau1 extends Phaser.Scene{
 
 
         this.planet5=this.add.image(0,0,'planet-5').setOrigin(0,0);
-        this.planet5.setVisible(false)
+        this.planet5.setVisible(true)
         this.planet5.setRandomPosition(1,2)
         this.planet5.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet5,
-            x: '-=800',
-            y: -(Math.random()*2),
-            duration: 100000,
+            x: Math.random()*1000,
+            y: Math.random()*1000,
+            duration: 100000+Math.random()*10000,
             ease: 'linear',
             yoyo: true,
             repeat: -1,
@@ -2247,9 +2256,9 @@ class Tableau1 extends Phaser.Scene{
         this.planet6.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet6,
-            x: '-=500',
-            y: -(Math.random()*2),
-            duration: 100000,
+            x: Math.random()*1000,
+            y: Math.random()*1000,
+            duration: 100000+Math.random()*10000,
             ease: 'linear',
             yoyo: true,
             repeat: -1,
@@ -2264,9 +2273,9 @@ class Tableau1 extends Phaser.Scene{
         this.planet7.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet7,
-            x: '+=200',
-            y: -(Math.random()*2),
-            duration: 100000,
+            x: Math.random()*1000,
+            y: Math.random()*1000,
+            duration: 100000+Math.random()*10000,
             ease: 'linear',
             yoyo: true,
             repeat: -1,
@@ -2281,9 +2290,9 @@ class Tableau1 extends Phaser.Scene{
         this.planet8.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet8,
-            x: '-=500',
-            y: (Math.random()*20),
-            duration: 100000,
+            x: Math.random()*2000,
+            y: Math.random()*2000,
+            duration: 100000+Math.random()*10000,
             ease: 'linear',
             yoyo: true,
             repeat: -1,
@@ -2298,16 +2307,22 @@ class Tableau1 extends Phaser.Scene{
         this.planet9.scale=Math.random()*2;
         this.tweens.add({
             targets: this.planet9,
-            x: '-=500',
-            y: -(Math.random()*20),
-            duration: 100000,
+            x: Math.random()*2000,
+            y: Math.random()*2000,
+            duration: 100000+Math.random()*10000,
             ease: 'linear',
             yoyo: true,
             repeat: -1,
             delay: 1000,
             flipX: false
         });
+        /**création trou noir*/
 
+        /**création super nova*/
+
+        /**création astéroid*/
+
+        /**création fusé*/
 
 
         //this.st.add('star1');
