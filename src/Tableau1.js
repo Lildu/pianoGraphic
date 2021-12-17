@@ -15,6 +15,9 @@ class Tableau1 extends Phaser.Scene{
         for(let t=1;t<=8;t++){
             this.load.image('cloud-'+t, 'assets/cloud/cloud'+t+'.png');
         }
+        for(let t=1;t<=8;t++){
+            this.load.audio('note'+t,'assets/sound/note-'+t+'.mp3');
+        }
     }
     getFrames(prefix,length){
         let frames=[];
@@ -38,6 +41,7 @@ class Tableau1 extends Phaser.Scene{
                         var star=this.star+t;
                         me.star.setVisible(true)
                     }**/
+                    me.do.play();
                     if (obj>=1){
                         me.star1.setVisible(true)
                     }
@@ -319,7 +323,7 @@ class Tableau1 extends Phaser.Scene{
                     console.log(obj)
                     break
                 case Phaser.Input.Keyboard.KeyCodes.S:
-
+                    me.re.play();
                     if (obj>=1){
                         me.star1.setVisible(true)
                     }
@@ -602,7 +606,7 @@ class Tableau1 extends Phaser.Scene{
                     break
 
                 case Phaser.Input.Keyboard.KeyCodes.D:
-
+                    me.mi.play();
                     if (obj>=1){
                         me.star1.setVisible(true)
                     }
@@ -884,7 +888,7 @@ class Tableau1 extends Phaser.Scene{
                     console.log(obj)
                     break
                 case Phaser.Input.Keyboard.KeyCodes.F:
-
+                    me.fa.play();
                     if (obj>=1){
                         me.star1.setVisible(true)
                     }
@@ -1166,7 +1170,7 @@ class Tableau1 extends Phaser.Scene{
                     console.log(obj)
                     break
                 case Phaser.Input.Keyboard.KeyCodes.G:
-
+                    me.sol.play();
                     if (cloud>=1){
                         me.cloud1.setVisible(true)
                     }
@@ -1197,7 +1201,7 @@ class Tableau1 extends Phaser.Scene{
                     break
 
                 case Phaser.Input.Keyboard.KeyCodes.H:
-
+                    me.la.play();
                     if (obj>=1){
                         me.star1.setVisible(true)
                     }
@@ -1480,6 +1484,7 @@ class Tableau1 extends Phaser.Scene{
                     break
 
                 case Phaser.Input.Keyboard.KeyCodes.J:
+                    me.si.play();
                     if (planet>=1){
                         me.planet1.setVisible(true)
                     }
@@ -1513,6 +1518,7 @@ class Tableau1 extends Phaser.Scene{
                     console.log(planet)
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.K:
+                    me.do2.play();
                     if (planet>=1){
                         me.planet1.setVisible(true)
                     }
@@ -1634,7 +1640,22 @@ class Tableau1 extends Phaser.Scene{
          var ransize = (add.Math.random(0,100)/100);*/
 
         //this.st = this.add.container(0,0);
-
+        this.do=this.sound.add('note1',{loop: false});
+        this.do.volume=0.6;
+        this.re=this.sound.add('note2',{loop: false});
+        this.re.volume=0.6;
+        this.mi=this.sound.add('note3',{loop: false});
+        this.mi.volume=0.6;
+        this.fa=this.sound.add('note4',{loop: false});
+        this.fa.volume=0.6;
+        this.sol=this.sound.add('note5',{loop: false});
+        this.sol.volume=0.6;
+        this.la=this.sound.add('note6',{loop: false});
+        this.la.volume=0.6;
+        this.si=this.sound.add('note7',{loop: false});
+        this.si.volume=0.6;
+        this.do2=this.sound.add('note8',{loop: false});
+        this.do2.volume=0.6;
         /**   créattion cloud   */
 
         this.cloud1=this.add.image(0,-150,'cloud-1').setOrigin(0,0);
@@ -2226,7 +2247,7 @@ class Tableau1 extends Phaser.Scene{
 
 
         this.planet5=this.add.image(0,0,'planet-5').setOrigin(0,0);
-        this.planet5.setVisible(true)
+        this.planet5.setVisible(false)
         this.planet5.setRandomPosition(1,2)
         this.planet5.scale=Math.random()*2;
         this.tweens.add({
