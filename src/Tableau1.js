@@ -18,6 +18,12 @@ class Tableau1 extends Phaser.Scene{
         for(let t=1;t<=8;t++){
             this.load.audio('note'+t,'assets/sound/note-'+t+'.mp3');
         }
+        for(let t=1;t<=4;t++){
+            this.load.image('nova'+t,'assets/nova/nova-'+t+'.png');
+        }
+        for(let t=1;t<=7;t++){
+            this.load.image('hole'+t,'assets/hole/hole-'+t+'.png');
+        }
     }
     getFrames(prefix,length){
         let frames=[];
@@ -1617,6 +1623,12 @@ class Tableau1 extends Phaser.Scene{
                     console.log("planet")
                     console.log(planet)
                     break;
+                case Phaser.Input.Keyboard.KeyCodes.Z:
+                    me.nova1.setVisible(true)
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.R:
+                    me.hole1.setVisible(true)
+                    break;
             }
         });
         this.input.keyboard.on('keyup', function(kevent)
@@ -1637,7 +1649,27 @@ class Tableau1 extends Phaser.Scene{
     }
     create(){
         /**var vX = add.Math.random(0,1000);
-         var ransize = (add.Math.random(0,100)/100);*/
+         var ransize = (add.Math.random(0,100)/100);
+         let novasset =nova+(Math.round(Math.random()*4));
+
+         */
+
+        /**   créattion nova   */
+        this.nova1=this.add.image(0,0,'nova'+Math.round(1+Math.random()*3)).setOrigin(0,0);
+        this.nova1.setVisible(false)
+        this.nova1.scale=1;
+        this.nova1.angle=Math.round(1+Math.random()*360);
+        this.nova1.setRandomPosition()
+
+        /**   créattion trou noir   */
+        this.hole1=this.add.image(0,0,'hole'+Math.round(1+Math.random()*6)).setOrigin(0,0);
+        this.hole1.setVisible(false)
+        this.hole1.scale=1;
+        this.hole1.angle=Math.round(1+Math.random()*360);
+        this.hole1.setRandomPosition()
+
+
+        /**   créattion cloud   */
 
         //this.st = this.add.container(0,0);
         this.do=this.sound.add('note1',{loop: false});
@@ -1656,6 +1688,7 @@ class Tableau1 extends Phaser.Scene{
         this.si.volume=0.6;
         this.do2=this.sound.add('note8',{loop: false});
         this.do2.volume=0.6;
+
         /**   créattion cloud   */
 
         this.cloud1=this.add.image(0,-150,'cloud-1').setOrigin(0,0);
