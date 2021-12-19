@@ -18,8 +18,8 @@ class Tableau1 extends Phaser.Scene{
         for(let t=1;t<=8;t++){
             this.load.image('cloud-'+t, 'assets/cloud/cloud'+t+'.png');
         }
-        for(let t=1;t<=15;t++){
-            this.load.audio('note'+t,'assets/sound/note-'+t+'.mp3');
+        for(let t=1;t<=18;t++){
+            this.load.audio('note'+t,'assets/sound/note-'+t+'.wav');
         }
         for(let t=1;t<=4;t++){
             this.load.image('nova'+t,'assets/nova/nova-'+t+'.png');
@@ -1393,6 +1393,14 @@ class Tableau1 extends Phaser.Scene{
                     me.lad.play();
 
                     break;
+                case Phaser.Input.Keyboard.KeyCodes.O:
+                    me.dod2.play();
+
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.P:
+                    me.red2.play();
+
+                    break;
 
 
             }
@@ -1462,35 +1470,39 @@ class Tableau1 extends Phaser.Scene{
 
         //this.st = this.add.container(0,0);
         this.do=this.sound.add('note1',{loop: false});
-        this.do.volume=1;
-        this.re=this.sound.add('note2',{loop: false});
-        this.re.volume=1;
-        this.mi=this.sound.add('note3',{loop: false});
-        this.mi.volume=1;
-        this.fa=this.sound.add('note4',{loop: false});
-        this.fa.volume=1;
-        this.sol=this.sound.add('note5',{loop: false});
-        this.sol.volume=1;
-        this.la=this.sound.add('note6',{loop: false});
-        this.la.volume=1;
-        this.si=this.sound.add('note7',{loop: false});
-        this.si.volume=1;
-        this.do2=this.sound.add('note8',{loop: false});
-        this.do2.volume=1;
-        this.re2=this.sound.add('note9',{loop: false});
-        this.re2.volume=1;
-        this.mi2=this.sound.add('note10',{loop: false});
-        this.mi2.volume=1;
-        this.dod=this.sound.add('note11',{loop: false});
-        this.dod.volume=1;
-        this.red=this.sound.add('note12',{loop: false});
-        this.red.volume=1;
-        this.fad=this.sound.add('note13',{loop: false});
-        this.fad.volume=1;
-        this.sold=this.sound.add('note14',{loop: false});
-        this.sold.volume=1;
-        this.lad=this.sound.add('note15',{loop: false});
-        this.lad.volume=1;
+        this.do.volume=0.5;
+        this.re=this.sound.add('note3',{loop: false});
+        this.re.volume=0.5;
+        this.mi=this.sound.add('note5',{loop: false});
+        this.mi.volume=0.5;
+        this.fa=this.sound.add('note6',{loop: false});
+        this.fa.volume=0.5;
+        this.sol=this.sound.add('note8',{loop: false});
+        this.sol.volume=0.5;
+        this.la=this.sound.add('note10',{loop: false});
+        this.la.volume=0.5;
+        this.si=this.sound.add('note12',{loop: false});
+        this.si.volume=0.5;
+        this.do2=this.sound.add('note13',{loop: false});
+        this.do2.volume=0.5;
+        this.re2=this.sound.add('note15',{loop: false});
+        this.re2.volume=0.5;
+        this.mi2=this.sound.add('note17',{loop: false});
+        this.mi2.volume=0.5;
+        this.dod=this.sound.add('note2',{loop: false});
+        this.dod.volume=0.5;
+        this.red=this.sound.add('note4',{loop: false});
+        this.red.volume=0.5;
+        this.fad=this.sound.add('note7',{loop: false});
+        this.fad.volume=0.5;
+        this.sold=this.sound.add('note9',{loop: false});
+        this.sold.volume=0.5;
+        this.lad=this.sound.add('note11',{loop: false});
+        this.lad.volume=0.5;
+        this.dod2=this.sound.add('note14',{loop: false});
+        this.dod2.volume=0.5;
+        this.red2=this.sound.add('note16',{loop: false});
+        this.red2.volume=0.5;
 
         /**   création cloud   */
 
