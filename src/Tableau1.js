@@ -18,7 +18,7 @@ class Tableau1 extends Phaser.Scene{
         for(let t=1;t<=8;t++){
             this.load.image('cloud-'+t, 'assets/cloud/cloud'+t+'.png');
         }
-        for(let t=1;t<=18;t++){
+        for(let t=1;t<=17;t++){
             this.load.audio('note'+t,'assets/sound/note-'+t+'.wav');
         }
         for(let t=1;t<=4;t++){
@@ -26,6 +26,9 @@ class Tableau1 extends Phaser.Scene{
         }
         for(let t=1;t<=7;t++){
             this.load.image('hole'+t,'assets/hole/hole-'+t+'.png');
+        }
+        for(let t=1;t<=4;t++){
+            this.load.image('supra'+t,'assets/nova/anim/supra-'+t+'.png');
         }
         this.load.image('fuse','assets/fuse/fuse.png');
     }
@@ -1375,6 +1378,8 @@ class Tableau1 extends Phaser.Scene{
                     me.dod.play();
 
                     me.nova1.setVisible(true)
+
+
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.E:
                     me.red.play();
@@ -1382,6 +1387,9 @@ class Tableau1 extends Phaser.Scene{
                     me.hole1.setVisible(true)
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.T:
+                    me.supra.setVisible(true)
+                    me.supra.play('supra');
+
                     me.fad.play();
 
                     break;
@@ -1457,6 +1465,18 @@ class Tableau1 extends Phaser.Scene{
         this.nova1.scale=1;
         this.nova1.angle=Math.round(1+Math.random()*360);
         this.nova1.setRandomPosition()
+
+        this.supra = this.add.sprite(0, 0, 'supra1').setOrigin(0,0);
+        this.supra.setVisible(false)
+        this.supra.setRandomPosition()
+        console.log(frames)
+        this.anims.create({
+            key: 'supra',
+            frames: this.getFrames("supra",4),
+            frameRate: 30,
+            repeat: 0
+        });
+
 
         /**   création trou noir   */
         this.hole1=this.add.image(0,0,'hole'+Math.round(1+Math.random()*6)).setOrigin(0,0);
