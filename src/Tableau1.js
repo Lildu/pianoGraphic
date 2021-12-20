@@ -27,7 +27,7 @@ class Tableau1 extends Phaser.Scene{
         for(let t=1;t<=7;t++){
             this.load.image('hole'+t,'assets/hole/hole-'+t+'.png');
         }
-        for(let t=1;t<=4;t++){
+        for(let t=1;t<=8;t++){
             this.load.image('supra'+t,'assets/nova/anim/supra-'+t+'.png');
         }
         this.load.image('fuse','assets/fuse/fuse.png');
@@ -1241,36 +1241,42 @@ class Tableau1 extends Phaser.Scene{
                     }
 
                     cloud += 1;
+                    console.log(cloud)
                     break
 
                 case Phaser.Input.Keyboard.KeyCodes.J:
                     me.si.play();
-                    if (cloud>=1){
-                        me.cloud1.setVisible(true)
+                    if (planet>=1){
+                        me.planet1.setVisible(true)
                     }
-                    if (cloud>=2){
-                        me.cloud2.setVisible(true)
+                    if (planet>=2){
+                        me.planet2.setVisible(true)
                     }
-                    if (cloud>=3){
-                        me.cloud3.setVisible(true)
+                    if (planet>=3){
+                        me.planet3.setVisible(true)
                     }
-                    if (cloud>=4){
-                        me.cloud4.setVisible(true)
+                    if (planet>=4){
+                        me.planet4.setVisible(true)
                     }
-                    if (cloud>=5){
-                        me.cloud5.setVisible(true)
+                    if (planet>=5){
+                        me.planet5.setVisible(true)
                     }
-                    if (cloud>=6){
-                        me.cloud6.setVisible(true)
+                    if (planet>=6){
+                        me.planet6.setVisible(true)
                     }
-                    if (cloud>=7){
-                        me.cloud7.setVisible(true)
+                    if (planet>=7){
+                        me.planet7.setVisible(true)
                     }
-                    if (cloud>=8){
-                        me.cloud8.setVisible(true)
+                    if (planet>=8){
+                        me.planet8.setVisible(true)
+                    }
+                    if (planet>=9){
+                        me.planet9.setVisible(true)
                     }
 
-                    cloud += 1;
+                    planet += 1;
+                    console.log("planet")
+                    console.log(planet)
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.K:
                     me.do2.play();
@@ -1377,7 +1383,9 @@ class Tableau1 extends Phaser.Scene{
                 case Phaser.Input.Keyboard.KeyCodes.Z:
                     me.dod.play();
 
-                    me.nova1.setVisible(true)
+
+                    me.supra.setVisible(true)
+                    me.supra.play('supra');
 
 
                     break;
@@ -1387,11 +1395,8 @@ class Tableau1 extends Phaser.Scene{
                     me.hole1.setVisible(true)
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.T:
-                    me.supra.setVisible(true)
-                    me.supra.play('supra');
-
                     me.fad.play();
-
+                    me.fuse1.setVisible(true)
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.Y:
                     me.sold.play();
@@ -1410,7 +1415,6 @@ class Tableau1 extends Phaser.Scene{
 
                     break;
 
-
             }
         });
         this.input.keyboard.on('keyup', function(kevent)
@@ -1427,6 +1431,10 @@ class Tableau1 extends Phaser.Scene{
                     break;
 
                 case Phaser.Input.Keyboard.KeyCodes.T:
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.Z:
+
+                    me.supra.setVisible(false)
 
 
                     break;
@@ -1442,8 +1450,7 @@ class Tableau1 extends Phaser.Scene{
          */
 
         /**   création fusé   */
-
-        this.fuse1=this.add.image(-100,Math.random()*100,'fuse').setOrigin(0,0);
+        this.fuse1=this.add.sprite(-100,Math.random()*100,'fuse').setOrigin(0,0);
         this.fuse1.setVisible(false)
         this.fuse1.scale=0.1;
         this.fuse1.angle=30;
@@ -1452,10 +1459,11 @@ class Tableau1 extends Phaser.Scene{
             x: 2000,
             y: Math.random()*200,
             duration: 3000,
-            ease: 'circle',
+            ease: 'linear',
             yoyo: false,
             repeat: 0,
             delay: 0,
+            flipY: true,
         });
 
 
@@ -1466,14 +1474,15 @@ class Tableau1 extends Phaser.Scene{
         this.nova1.angle=Math.round(1+Math.random()*360);
         this.nova1.setRandomPosition()
 
+        //ANIM
         this.supra = this.add.sprite(0, 0, 'supra1').setOrigin(0,0);
         this.supra.setVisible(false)
         this.supra.setRandomPosition()
         console.log(frames)
         this.anims.create({
             key: 'supra',
-            frames: this.getFrames("supra",4),
-            frameRate: 30,
+            frames: this.getFrames("supra",8),
+            frameRate: 25,
             repeat: 0
         });
 
@@ -2209,14 +2218,6 @@ class Tableau1 extends Phaser.Scene{
             delay: 1000,
             flipX: false
         });
-        /**création trou noir*/
-
-        /**création super nova*/
-
-        /**création astéroid*/
-
-        /**création fusé*/
-
 
         //this.st.add('star1');
         //this.st.scale=1;
@@ -2248,9 +2249,6 @@ class Tableau1 extends Phaser.Scene{
 
 
         }*/
-        if (this.fuse1.positionX >= 1080)
-            this.fuse1.setVisible(false);
-
     }
 
 }
