@@ -1,7 +1,7 @@
 let obj = 1;
 let planet=1;
 let cloud=1;
-let fusex=1;
+
 
 
 class Tableau1 extends Phaser.Scene{
@@ -1397,10 +1397,11 @@ class Tableau1 extends Phaser.Scene{
                 case Phaser.Input.Keyboard.KeyCodes.T:
                     me.fad.play();
                     me.fuse1.setVisible(true)
+
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.Y:
                     me.sold.play();
-
+                    me.fuse1.setVisible(false)
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.U:
                     me.lad.play();
@@ -1450,20 +1451,21 @@ class Tableau1 extends Phaser.Scene{
          */
 
         /**   création fusé   */
-        this.fuse1=this.add.sprite(-100,Math.random()*100,'fuse').setOrigin(0,0);
+        this.fuse1=this.add.sprite(-500,Math.random()*100,'fuse').setOrigin(0,0);
         this.fuse1.setVisible(false)
         this.fuse1.scale=0.1;
-        this.fuse1.angle=30;
+        this.fuse1.alpha=0.95;
+        this.fuse1.angle=0;
         this.tweens.add({
             targets: this.fuse1,
-            x: 2000,
+            x: 3000,
             y: Math.random()*200,
             duration: 3000,
             ease: 'linear',
-            yoyo: false,
-            repeat: 0,
-            delay: 0,
-            flipY: true,
+            flipX: true,
+            yoyo: true,
+            repeat: -1,
+            loopdelay: Math.random()*100,
         });
 
 
@@ -1485,8 +1487,15 @@ class Tableau1 extends Phaser.Scene{
             frameRate: 25,
             repeat: 0
         });
+/**
+        this.anims.create({
+            key: 'supra2',
+            frames: this.getFrames("supra",8),
+            frameRate: -25,
+            repeat: 0
+        });
 
-
+*/
         /**   création trou noir   */
         this.hole1=this.add.image(0,0,'hole'+Math.round(1+Math.random()*6)).setOrigin(0,0);
         this.hole1.setVisible(false)
@@ -1600,208 +1609,208 @@ class Tableau1 extends Phaser.Scene{
         /**création étoile*/
         this.star1=this.add.image(0,0,'star-1').setOrigin(0,0);
         this.star1.setVisible(false)
-        this.star1.setRandomPosition(1,2)
+        this.star1.setRandomPosition()
         this.star1.scale=0.1;
 
         this.star2=this.add.image(0,0,'star-2').setOrigin(0,0);
         this.star2.setVisible(false)
-        this.star2.setRandomPosition(1,2)
+        this.star2.setRandomPosition()
         this.star2.scale=0.1;
 
         this.star3=this.add.image(0,0,'star-3').setOrigin(0,0);
         this.star3.setVisible(false)
-        this.star3.setRandomPosition(1,2)
+        this.star3.setRandomPosition()
         this.star3.scale=0.1;
 
         this.star4=this.add.image(0,0,'star-4').setOrigin(0,0);
         this.star4.setVisible(false)
-        this.star4.setRandomPosition(1,2)
+        this.star4.setRandomPosition()
         this.star4.scale=0.1;
 
         this.star5=this.add.image(0,0,'star-5').setOrigin(0,0);
         this.star5.setVisible(false)
-        this.star5.setRandomPosition(1,2)
+        this.star5.setRandomPosition()
         this.star5.scale=0.1;
 
         this.star6=this.add.image(0,0,'star-6').setOrigin(0,0);
         this.star6.setVisible(false)
-        this.star6.setRandomPosition(1,2)
+        this.star6.setRandomPosition()
         this.star6.scale=0.1;
 
         this.star7=this.add.image(0,0,'star-7').setOrigin(0,0);
         this.star7.setVisible(false)
-        this.star7.setRandomPosition(1,2)
+        this.star7.setRandomPosition()
         this.star7.scale=0.1;
 
         this.star8=this.add.image(0,0,'star-8').setOrigin(0,0);
         this.star8.setVisible(false)
-        this.star8.setRandomPosition(1,2)
+        this.star8.setRandomPosition()
         this.star8.scale=0.1;
 
         this.star9=this.add.image(0,0,'star-9').setOrigin(0,0);
         this.star9.setVisible(false)
-        this.star9.setRandomPosition(1,2)
+        this.star9.setRandomPosition()
         this.star9.scale=0.1;
 
         this.star10=this.add.image(0,0,'star-10').setOrigin(0,0);
         this.star10.setVisible(false)
-        this.star10.setRandomPosition(1,2)
+        this.star10.setRandomPosition()
         this.star10.scale=0.1;
 
         this.star11=this.add.image(0,0,'star-11').setOrigin(0,0);
         this.star11.setVisible(false)
-        this.star11.setRandomPosition(1,2)
+        this.star11.setRandomPosition()
         this.star11.scale=0.1;
 
         this.star12=this.add.image(0,0,'star-12').setOrigin(0,0);
         this.star12.setVisible(false)
-        this.star12.setRandomPosition(1,2)
+        this.star12.setRandomPosition()
         this.star12.scale=0.1;
 
         this.star13=this.add.image(0,0,'star-13').setOrigin(0,0);
         this.star13.setVisible(false)
-        this.star13.setRandomPosition(1,2)
+        this.star13.setRandomPosition()
         this.star13.scale=0.1;
 
         this.star14=this.add.image(0,0,'star-14').setOrigin(0,0);
         this.star14.setVisible(false)
-        this.star14.setRandomPosition(1,2)
+        this.star14.setRandomPosition()
         this.star14.scale=0.1;
 
         this.star15=this.add.image(0,0,'star-15').setOrigin(0,0);
         this.star15.setVisible(false)
-        this.star15.setRandomPosition(1,2)
+        this.star15.setRandomPosition()
         this.star15.scale=0.1;
 
         this.star16=this.add.image(0,0,'star-16').setOrigin(0,0);
         this.star16.setVisible(false)
-        this.star16.setRandomPosition(1,2)
+        this.star16.setRandomPosition()
         this.star16.scale=0.1;
 
         this.star17=this.add.image(0,0,'star-17').setOrigin(0,0);
         this.star17.setVisible(false)
-        this.star17.setRandomPosition(1,2)
+        this.star17.setRandomPosition()
         this.star17.scale=0.1;
 
         this.star18=this.add.image(0,0,'star-18').setOrigin(0,0);
         this.star18.setVisible(false)
-        this.star18.setRandomPosition(1,2)
+        this.star18.setRandomPosition()
         this.star18.scale=0.1;
 
         this.star19=this.add.image(0,0,'star-19').setOrigin(0,0);
         this.star19.setVisible(false)
-        this.star19.setRandomPosition(1,2)
+        this.star19.setRandomPosition()
         this.star19.scale=0.1;
 
         this.star20=this.add.image(0,0,'star-20').setOrigin(0,0);
         this.star20.setVisible(false)
-        this.star20.setRandomPosition(1,2)
+        this.star20.setRandomPosition()
         this.star20.scale=0.1;
 
         this.star21=this.add.image(0,0,'star-21').setOrigin(0,0);
         this.star21.setVisible(false)
-        this.star21.setRandomPosition(1,2)
+        this.star21.setRandomPosition()
         this.star21.scale=0.1;
 
         this.star22=this.add.image(0,0,'star-22').setOrigin(0,0);
         this.star22.setVisible(false)
-        this.star22.setRandomPosition(1,2)
+        this.star22.setRandomPosition()
         this.star22.scale=0.1;
 
         this.star23=this.add.image(0,0,'star-23').setOrigin(0,0);
         this.star23.setVisible(false)
-        this.star23.setRandomPosition(1,2)
+        this.star23.setRandomPosition()
         this.star23.scale=0.1;
 
 
         this.star24=this.add.image(0,0,'star-24').setOrigin(0,0);
         this.star24.setVisible(false)
-        this.star24.setRandomPosition(1,2)
+        this.star24.setRandomPosition()
         this.star24.scale=0.1;
 
         this.star25=this.add.image(0,0,'star-25').setOrigin(0,0);
         this.star25.setVisible(false)
-        this.star25.setRandomPosition(1,2)
+        this.star25.setRandomPosition()
         this.star25.scale=0.1;
 
         this.star26=this.add.image(0,0,'star-26').setOrigin(0,0);
         this.star26.setVisible(false)
-        this.star26.setRandomPosition(1,2)
+        this.star26.setRandomPosition()
         this.star26.scale=0.1;
 
         this.star27=this.add.image(0,0,'star-27').setOrigin(0,0);
         this.star27.setVisible(false)
-        this.star27.setRandomPosition(1,2)
+        this.star27.setRandomPosition()
         this.star27.scale=0.1;
 
         this.star28=this.add.image(0,0,'star-28').setOrigin(0,0);
         this.star28.setVisible(false)
-        this.star28.setRandomPosition(1,2)
+        this.star28.setRandomPosition()
         this.star28.scale=0.1;
 
         this.star29=this.add.image(0,0,'star-29').setOrigin(0,0);
         this.star29.setVisible(false)
-        this.star29.setRandomPosition(1,2)
+        this.star29.setRandomPosition()
         this.star29.scale=0.1;
 
         this.star30=this.add.image(0,0,'star-30').setOrigin(0,0);
         this.star30.setVisible(false)
-        this.star30.setRandomPosition(1,2)
+        this.star30.setRandomPosition()
         this.star30.scale=0.1;
 
         this.star31=this.add.image(0,0,'star-31').setOrigin(0,0);
         this.star31.setVisible(false)
-        this.star31.setRandomPosition(1,2)
+        this.star31.setRandomPosition()
         this.star31.scale=0.1;
 
         this.star32=this.add.image(0,0,'star-32').setOrigin(0,0);
         this.star32.setVisible(false)
-        this.star32.setRandomPosition(1,2)
+        this.star32.setRandomPosition()
         this.star32.scale=0.1;
 
         this.star33=this.add.image(0,0,'star-33').setOrigin(0,0);
         this.star33.setVisible(false)
-        this.star33.setRandomPosition(1,2)
+        this.star33.setRandomPosition()
         this.star33.scale=0.1;
 
         this.star34=this.add.image(0,0,'star-34').setOrigin(0,0);
         this.star34.setVisible(false)
-        this.star34.setRandomPosition(1,2)
+        this.star34.setRandomPosition()
         this.star34.scale=0.1;
 
         this.star35=this.add.image(0,0,'star-35').setOrigin(0,0);
         this.star35.setVisible(false)
-        this.star35.setRandomPosition(1,2)
+        this.star35.setRandomPosition()
         this.star35.scale=0.1;
 
         this.star36=this.add.image(0,0,'star-36').setOrigin(0,0);
         this.star36.setVisible(false)
-        this.star36.setRandomPosition(1,2)
+        this.star36.setRandomPosition()
         this.star36.scale=0.1;
 
         this.star37=this.add.image(0,0,'star-37').setOrigin(0,0);
         this.star37.setVisible(false)
-        this.star37.setRandomPosition(1,2)
+        this.star37.setRandomPosition()
         this.star37.scale=0.1;
 
         this.star38=this.add.image(0,0,'star-38').setOrigin(0,0);
         this.star38.setVisible(false)
-        this.star38.setRandomPosition(1,2)
+        this.star38.setRandomPosition()
         this.star38.scale=0.1;
 
         this.star38=this.add.image(0,0,'star-39').setOrigin(0,0);
         this.star38.setVisible(false)
-        this.star38.setRandomPosition(1,2)
+        this.star38.setRandomPosition()
         this.star38.scale=0.1;
 
         this.star39=this.add.image(0,0,'star-40').setOrigin(0,0);
         this.star39.setVisible(false)
-        this.star39.setRandomPosition(1,2)
+        this.star39.setRandomPosition()
         this.star39.scale=0.1;
 
         this.star40=this.add.image(0,0,'star-41').setOrigin(0,0);
         this.star40.setVisible(false)
-        this.star40.setRandomPosition(1,2)
+        this.star40.setRandomPosition()
         this.star40.scale=0.1;
 
         this.star41=this.add.image(0,0,'star-42').setOrigin(0,0);
@@ -2062,10 +2071,7 @@ class Tableau1 extends Phaser.Scene{
 
 
         /**création planet*/
-        let n = 0;
-        while (n<360) {
-            n++;
-        }
+
 
         this.planet1=this.add.image(0,0,'planet-1').setOrigin(0,0);
         this.planet1.setVisible(false)
